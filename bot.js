@@ -32,7 +32,7 @@ message.channel.send(`${command}`);
               message.channel.send("bar!");
               break;
 case "pog":
-message.reply('You are the goat :star_struck :star_struck');
+message.reply('You are the goat :star_struck: :star_struck:');
 break;
   }
   
