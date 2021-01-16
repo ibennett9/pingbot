@@ -31,6 +31,9 @@ message.channel.send(`${command}`);
           case "foo":
               message.channel.send("bar!");
               break;
+case "pog":
+message.reply('You are the goat :star_struck :star_struck');
+break;
   }
   
 });
