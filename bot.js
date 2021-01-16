@@ -32,8 +32,17 @@ message.channel.send(`${command}`);
               message.channel.send("bar!");
               break;
 case "pog":
-message.reply('You are the goat :star_struck: :star_struck:');
-break;
+message.channel.send('Command recieved');
+          if (!args[0].mentions.users.first()) return;
+          let user = args[0].mentions.users.first();
+          message.channel.send(`You want to ping <@${user.id}`);
+          args.shift();
+          let repeat = args.shift();
+          if(!Number.isInteger(repeat)) return;
+          repeat = Math.abs(repeat);
+          message.channel.send(`You want to ping <@${user.id}> ${repeat} times`);
+          break;
+//message.reply('You are the goat :star_struck: :star_struck:');
   }
   
 });
