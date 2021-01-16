@@ -10,7 +10,7 @@ client.on('ready', () => {
 
  
 client.on('message', message => {
-    if (!message.startsWith(prefix)) return;
+    if (!message.startsWith(prefix)) message.channel.send('Loser');
     if (message.startsWith(prefix + "pingdino"))
     {
         var dino = client.users.cache.find(u => u.tag === 'CURRY IN A HURRY!!!#9290').id;
