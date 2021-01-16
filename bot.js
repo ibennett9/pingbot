@@ -1,6 +1,5 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
-const prefix="&";
 
 client.on('ready', () => {
 
@@ -9,18 +8,17 @@ client.on('ready', () => {
 });
 
  
-client.on('message', message => {
-    if (!message.startsWith(prefix)) message.channel.send('Loser');
-    if (message.startsWith(prefix + "pingdino"))
-    {
-        var dino = client.users.cache.find(u => u.tag === 'CURRY IN A HURRY!!!#9290').id;
-        message.channel.send(dino);
-    }
-    else if (message.startsWith(prefix) + "ping")
-    {
-        message.reply(" pong!");
-    }
+const prefix = "!";
+client.on("message", (message) => {
+  // Exit and stop if it's not there
+  if (!message.content.startsWith(prefix)) return;
 
+  if (message.content.startsWith(prefix + "ping")) {
+    message.channel.send("pong!");
+  } else
+  if (message.content.startsWith(prefix + "foo")) {
+    message.channel.send("bar!");
+  }
 });
 
 client.login(process.env.BOT_TOKEN);
