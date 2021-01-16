@@ -18,7 +18,7 @@ client.on("message", (message) => {
 message.channel.send(`${command}`);
   switch (command){
       case "troll":
-          message.send('Command recieved');
+          message.channel.send('Command recieved');
           if (!args[0].mentions.users.first()) return;
           let user = args[0].mentions.users.first();
           message.channel.send(`You want to ping <@${user.id}`);
