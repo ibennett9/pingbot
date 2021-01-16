@@ -18,8 +18,10 @@ client.on("message", (message) => {
 
   switch (command){
       case "ping":
+          message.reply('Command recieved');
           if (!args[0].mentions.users.first()) return;
           let user = args[0].mentions.users.first();
+          message.channel.send(`You want to ping <@${user.id}`);
           args.shift();
           let repeat = args.shift();
           if(!Number.isInteger(repeat)) return;
@@ -28,6 +30,7 @@ client.on("message", (message) => {
           break;
           case "foo":
               message.channel.send("bar!");
+              break;
   }
   
 });
