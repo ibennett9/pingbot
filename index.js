@@ -6,7 +6,7 @@ client.once('ready', () => {
 
 });
 
-client.login('ODAwMDE3MzYxMTg0MjI3MzQ4.YAMAOg.hUyprtHNyPxJMjjEG1RFUEZd7CQ');
+client.login('process.env.BOT_TOKEN');
 
 client.on('message', message => {
     if (message.content === "&pingdino")
