@@ -12,7 +12,7 @@ const prefix = "!";
 client.on("message", (message) => {
   // Exit and stop if it's not there
   if (!message.content.startsWith(prefix)) return;
-
+    message.reply('You sent a command');
   var args = message.content.slice(prefix.length).trim().split(/ +/g);
   var command = args.shift().toLowerCase();
 
