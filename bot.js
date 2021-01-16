@@ -15,7 +15,7 @@ client.on("message", (message) => {
 
   if (message.content.startsWith(prefix + "ping")) {
       let user = message.mentions.users.first();
-      message.channel.send(`Ping: @${user.tag}`);
+      message.channel.send(`Ping: <@${user.id}>`);
     message.channel.send("pong!");
   } else
   if (message.content.startsWith(prefix + "foo")) {
