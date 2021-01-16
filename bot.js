@@ -13,14 +13,23 @@ client.on("message", (message) => {
   // Exit and stop if it's not there
   if (!message.content.startsWith(prefix)) return;
 
-  if (message.content.startsWith(prefix + "ping")) {
-      let user = message.mentions.users.first();
-      message.channel.send(`!ping <@${user.id}>`);
-    message.channel.send("pong!");
-  } else
-  if (message.content.startsWith(prefix + "foo")) {
-    message.channel.send("bar!");
+  var args = message.content.slice(prefix.length).trim().split(/ +/g);
+  var command = args.shift().toLowerCase();
+
+  switch (command){
+      case "ping":
+          if (!args[0].mentions.users.first()) return;
+          let user = args[0].mentions.users.first();
+          args.shift();
+          let repeat = args.shift();
+          if(!Number.isInteger(repeat)) return;
+          repeat = Math.abs(repeat);
+          message.channel.send(`You want to ping <@${user.id}> ${repeat} times`);
+          break;
+          case "foo":
+              message.channel.send("bar!");
   }
+  
 });
 
 client.login(process.env.BOT_TOKEN);
