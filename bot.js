@@ -15,7 +15,7 @@ client.on("message", (message) => {
     message.reply('You sent a command');
   var args = message.content.slice(prefix.length).trim().split(/ +/g);
   var command = args.shift().toLowerCase();
-
+message.channel.send(`${command}`);
   switch (command){
       case "ping":
           message.reply('Command recieved');
