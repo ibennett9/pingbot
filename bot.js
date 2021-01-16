@@ -17,7 +17,7 @@ client.on("message", (message) => {
   var command = args.shift().toLowerCase();
 message.channel.send(`${command}`);
   switch (command){
-      case "ping":
+      case "troll":
           message.send('Command recieved');
           if (!args[0].mentions.users.first()) return;
           let user = args[0].mentions.users.first();
