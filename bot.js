@@ -25,26 +25,19 @@ message.channel.send(`${command}`);
 //           message.channel.send(`You want to ping <@${userPerson.id}> ${repeat} times`);
           break;
           case "foo":
-              message.channel.send("bar!");
+              foo(message);
               break;
 case "pog":
-message.channel.send('Command recieved');
-          if (!args[0].mentions.users.first()) return;
-          let user = args[0].mentions.users.first();
-          message.channel.send(`You want to ping <@${user.id}`);
-          args.shift();
-          let repeat = args.shift();
-          if(!Number.isInteger(repeat)) return;
-          repeat = Math.abs(repeat);
-          message.channel.send(`You want to ping <@${user.id}> ${repeat} times`);
+          message.reply('You are the goat :star_struck: :star_struck:');
           break;
-//message.reply('You are the goat :star_struck: :star_struck:');
+
   }
   
 });
 
 client.login(process.env.BOT_TOKEN);
-function troll(var message){
+
+function troll(message){
     message.channel.send('Command recieved');
     if (!args[0].mentions.users.first()) return;
         let userPerson = args[0].mentions.users.first();
@@ -54,4 +47,8 @@ function troll(var message){
           if(!Number.isInteger(repeat)) return;
           repeat = Math.abs(repeat);
           message.channel.send(`You want to ping <@${userPerson.id}> ${repeat} times`);
+}
+
+function foo(message){
+  message.channel.send("Bar!");
 }
