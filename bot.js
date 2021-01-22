@@ -7,7 +7,6 @@ const prefix = "!";
 client.on("message", (message) => {
   // Exit and stop if it's not there
   if (!message.content.startsWith(prefix)) return;
-    message.reply('You sent a command');
   var args = message.content.slice(prefix.length).trim().split(/ +/g);
   var command = args.shift().toLowerCase();
 message.channel.send(`${command}`);
@@ -28,13 +27,15 @@ case "pog":
 
 client.login(process.env.BOT_TOKEN);
 
-function troll(message, args){
+function troll(message){
+  
+    var args = message.content.slice(prefix.length).trim().split(/ +/g);
+    var userPerson = message.mentions.users.first();
+    args.shift();
+    args.shift();
+    var repeat = args.shift();
     message.channel.send('Command recieved');
-    if (!args[0].mentions.users.first()) return;
-        let userPerson = args[0].mentions.users.first();
           message.channel.send(`You want to ping <@${userPerson.id}`);
-          args.shift();
-          let repeat = args.shift();
           if(!Number.isInteger(repeat)) return;
           repeat = Math.abs(repeat);
           message.channel.send(`You want to ping <@${userPerson.id}> ${repeat} times`);
