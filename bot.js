@@ -33,13 +33,22 @@ function troll(message){
     args.shift();
     args.shift();
     var repeat = Number(args.shift());
+    var interval = Number(args.shift());
           if(!Number.isInteger(repeat)) return;
           repeat = Math.abs(repeat);
+          if(!Number.isInteger(interval)){
           message.channel.send(`You want to ping <@${userPerson.id}> ${repeat} times`);
           for (var i = 0; i<repeat; i++)
           {
             message.channel.send(`<@${userPerson.id}>`);
           }
+        } else {
+          interval = Math.abs(interval);
+          for(var i =0;i<repeat;i++)
+          {
+            setTimeout((message) => {message.channel.send(`<@${userPerson.id}>`), interval});
+          }
+        }
 }
 
 function foo(message){
