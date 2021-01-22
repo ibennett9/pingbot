@@ -9,7 +9,6 @@ client.on("message", (message) => {
   if (!message.content.startsWith(prefix)) return;
   var args = message.content.slice(prefix.length).trim().split(/ +/g);
   var command = args.shift().toLowerCase();
-message.channel.send(`${command}`);
   switch (command){
       case "troll":
           troll(message, args);
@@ -34,8 +33,7 @@ function troll(message){
     args.shift();
     args.shift();
     var repeat = args.shift();
-    message.channel.send('Command recieved');
-          message.channel.send(`You want to ping <@${userPerson.id}`);
+          message.channel.send(`You want to ping <@${userPerson.id}> with ${repeat}`);
           if(!Number.isInteger(repeat)) return;
           repeat = Math.abs(repeat);
           message.channel.send(`You want to ping <@${userPerson.id}> ${repeat} times`);
