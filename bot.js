@@ -13,7 +13,7 @@ client.on("message", (message) => {
       case "troll":
           troll(message, args);
           break;
-          case "foo":
+      case "foo":
               foo(message);
               break;
 case "pog":
@@ -33,10 +33,13 @@ function troll(message){
     args.shift();
     args.shift();
     var repeat = Number(args.shift());
-          message.channel.send(`You want to ping <@${userPerson.id}> with ${repeat}`);
           if(!Number.isInteger(repeat)) return;
           repeat = Math.abs(repeat);
           message.channel.send(`You want to ping <@${userPerson.id}> ${repeat} times`);
+          for (var i = 0; i<repeat; i++)
+          {
+            message.channel.send(`<@${userPerson.id}>`);
+          }
 }
 
 function foo(message){
