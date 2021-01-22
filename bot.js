@@ -13,16 +13,7 @@ client.on("message", (message) => {
 message.channel.send(`${command}`);
   switch (command){
       case "troll":
-          troll(message);
-//           message.channel.send('Command recieved');
-//           if (!args[0].mentions.users.first()) return;
-//           let userPerson = args[0].mentions.users.first();
-//           message.channel.send(`You want to ping <@${userPerson.id}`);
-//           args.shift();
-//           let repeat = args.shift();
-//           if(!Number.isInteger(repeat)) return;
-//           repeat = Math.abs(repeat);
-//           message.channel.send(`You want to ping <@${userPerson.id}> ${repeat} times`);
+          troll(message, args);
           break;
           case "foo":
               foo(message);
@@ -37,7 +28,7 @@ case "pog":
 
 client.login(process.env.BOT_TOKEN);
 
-function troll(message){
+function troll(message, args){
     message.channel.send('Command recieved');
     if (!args[0].mentions.users.first()) return;
         let userPerson = args[0].mentions.users.first();
