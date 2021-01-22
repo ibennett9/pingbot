@@ -46,7 +46,7 @@ function troll(message){
           interval = Math.abs(interval);
           for(var i =0;i<repeat;i++)
           {
-            setTimeout((message) => {message.channel.send(`<@${userPerson.id}>`), interval});
+            setTimeout(function(){message.channel.send(`<@${userPerson.id}>`);}, interval);
           }
         }
 }
