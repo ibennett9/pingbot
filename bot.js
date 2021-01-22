@@ -32,7 +32,7 @@ function troll(message){
     var userPerson = message.mentions.users.first();
     args.shift();
     args.shift();
-    var repeat = args.shift();
+    var repeat = Number(args.shift());
           message.channel.send(`You want to ping <@${userPerson.id}> with ${repeat}`);
           if(!Number.isInteger(repeat)) return;
           repeat = Math.abs(repeat);
