@@ -1,13 +1,8 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
-
 client.on('ready', () => {
-
     console.log('I am ready!');
-
 });
-
- 
 const prefix = "!";
 client.on("message", (message) => {
   // Exit and stop if it's not there
@@ -18,15 +13,16 @@ client.on("message", (message) => {
 message.channel.send(`${command}`);
   switch (command){
       case "troll":
-          message.channel.send('Command recieved');
-          if (!args[0].mentions.users.first()) return;
-          let user = args[0].mentions.users.first();
-          message.channel.send(`You want to ping <@${user.id}`);
-          args.shift();
-          let repeat = args.shift();
-          if(!Number.isInteger(repeat)) return;
-          repeat = Math.abs(repeat);
-          message.channel.send(`You want to ping <@${user.id}> ${repeat} times`);
+          troll(message);
+//           message.channel.send('Command recieved');
+//           if (!args[0].mentions.users.first()) return;
+//           let userPerson = args[0].mentions.users.first();
+//           message.channel.send(`You want to ping <@${userPerson.id}`);
+//           args.shift();
+//           let repeat = args.shift();
+//           if(!Number.isInteger(repeat)) return;
+//           repeat = Math.abs(repeat);
+//           message.channel.send(`You want to ping <@${userPerson.id}> ${repeat} times`);
           break;
           case "foo":
               message.channel.send("bar!");
@@ -48,3 +44,14 @@ message.channel.send('Command recieved');
 });
 
 client.login(process.env.BOT_TOKEN);
+function troll(var message){
+    message.channel.send('Command recieved');
+    if (!args[0].mentions.users.first()) return;
+        let userPerson = args[0].mentions.users.first();
+          message.channel.send(`You want to ping <@${userPerson.id}`);
+          args.shift();
+          let repeat = args.shift();
+          if(!Number.isInteger(repeat)) return;
+          repeat = Math.abs(repeat);
+          message.channel.send(`You want to ping <@${userPerson.id}> ${repeat} times`);
+}
