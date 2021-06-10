@@ -56,7 +56,7 @@ function troll(message){
           interval = Math.abs(interval);
           for(var i =0;i<repeat;i++)
           {
-            setTimeout(function(){message.channel.send(`<@${userPerson.id}>`)..catch(err => console.error(err));}, interval);
+            setTimeout(function(){message.channel.send(`<@${userPerson.id}>`).catch(err => console.error(err));}, interval);
           }
         }
 }
