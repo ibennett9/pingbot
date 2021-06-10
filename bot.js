@@ -66,7 +66,7 @@ function heraldTheComrade(message)
 {
     var user = message.author;
     message.channel.send(`<@${user.id}>, you called upon your Comrade friends! I am here to support you!`);
-    message.channel.send(`https://acegif.com/wp-content/uploads/2020/04/soviet-flag-16.gif`);
+    message.channel.send(`https://c.tenor.com/rH_kpMNuotUAAAAM/communism-communist.gif`);
 }
 
 function foo(message){
