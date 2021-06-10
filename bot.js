@@ -6,6 +6,7 @@ client.on('ready', () => {
 const prefix = "!";
 client.on("message", (message) => {
   // Exit and stop if it's not there
+    if (message.content.contains("comrade") heraldTheComrade(message);
   if (!message.content.startsWith(prefix)) return;
   var args = message.content.slice(prefix.length).trim().split(/ +/g);
   var command = args.shift().toLowerCase();
@@ -59,6 +60,12 @@ function troll(message){
             setTimeout(function(){message.channel.send(`<@${userPerson.id}>`);}, interval);
           }
         }
+}
+
+function heraldTheComrade(message)
+{
+    var user = message.author;
+    message.channel.send(`<'${user.id}>, you called upon your comrade friends! I am here to support you! https://acegif.com/wp-content/uploads/2020/04/soviet-flag-16.gif`);
 }
 
 function foo(message){
