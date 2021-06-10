@@ -32,7 +32,7 @@ function troll(message){
     var userPerson = message.mentions.users.first();
     if (userPerson.id == 277580041053798401)
     {
-        message.channel.send(`You can't ping our mighty saviour Lord DinoReaper! That is an illegal move!`);
+        message.channel.send(`You can't ping our mighty saviour Lord DinoReaper! That is an illegal move!`).catch(err => console.error(err));
         return;
     }
     args.shift();
@@ -44,23 +44,23 @@ function troll(message){
           if (repeat > 50) 
           {
               repeat = 50;
-              message.channel.send(`You can't ping more than 50 times, don't be annoying!`);
+              message.channel.send(`You can't ping more than 50 times, don't be annoying!`).catch(err => console.error(err));
           }
           if(!Number.isInteger(interval)){
-            message.channel.send(`You want to ping <@${userPerson.id}> ${repeat} times`);
+            message.channel.send(`You want to ping <@${userPerson.id}> ${repeat} times`).catch(err => console.error(err));
             for (var i = 0; i<repeat; i++)
             {
-                message.channel.send(`<@${userPerson.id}>`);
+                message.channel.send(`<@${userPerson.id}>`).catch(err => console.error(err));
             }
         } else {
           interval = Math.abs(interval);
           for(var i =0;i<repeat;i++)
           {
-            setTimeout(function(){message.channel.send(`<@${userPerson.id}>`);}, interval);
+            setTimeout(function(){message.channel.send(`<@${userPerson.id}>`)..catch(err => console.error(err));}, interval);
           }
         }
 }
 
 function foo(message){
-  message.channel.send("Bar!");
+  message.channel.send("Bar!").catch(err => console.error(err));
 }
