@@ -30,6 +30,11 @@ function troll(message){
   
     var args = message.content.slice(prefix.length).trim().split(/ +/g);
     var userPerson = message.mentions.users.first();
+    if (userPerson.id == 277580041053798401)
+    {
+        message.channel.send(`You can't ping our mighty saviour Lord DinoReaper! That is an illegal move!`);
+        return;
+    }
     args.shift();
     args.shift();
     var repeat = Number(args.shift());
