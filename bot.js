@@ -36,7 +36,7 @@ function troll(message){
     args.shift();
     args.shift();
     var repeat = Number(args.shift());
-    var interval = Number(args.shift());
+    var interval = args.shift();
           if(!Number.isInteger(repeat)) return;
           repeat = Math.abs(repeat);
           if (repeat > 50) 
@@ -48,14 +48,8 @@ function troll(message){
             message.channel.send(`You want to ping <@${userPerson.id}> ${repeat} times`);
             for (var i = 0; i<repeat; i++)
             {
-                message.channel.send(`<@${userPerson.id}>`);
+                message.channel.send(`<@${userPerson.id}> ${interval}`);
             }
-        } else {
-          interval = Math.abs(interval);
-          for(var i =0;i<repeat;i++)
-          {
-            setTimeout(function(){message.channel.send(`<@${userPerson.id}>`);}, interval);
-          }
         }
 }
 function heraldTheComrade(message)
