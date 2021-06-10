@@ -6,8 +6,7 @@ client.on('ready', () => {
 const prefix = "!";
 client.on("message", (message) => {
   // Exit and stop if it's not there
-    var isComrade = message.content.find("comrade");
-  if (isComrade != -1) {heraldTheComrade(message); return;}
+  if (message.content.includes("comrade")) {heraldTheComrade(message); return;}
   if (!message.content.startsWith(prefix)) return;
   var args = message.content.slice(prefix.length).trim().split(/ +/g);
   var command = args.shift().toLowerCase();
