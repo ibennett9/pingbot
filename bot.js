@@ -40,6 +40,7 @@ function troll(message){
           {
               repeat = 50;
               message.channel.send(`You can't ping more than 50 times, don't be annoying!`);
+          }
           if(!Number.isInteger(interval)){
             message.channel.send(`You want to ping <@${userPerson.id}> ${repeat} times`);
             for (var i = 0; i<repeat; i++)
