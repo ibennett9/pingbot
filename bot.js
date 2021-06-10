@@ -6,7 +6,6 @@ client.on('ready', () => {
 const prefix = "!";
 client.on("message", (message) => {
   // Exit and stop if it's not there
-  if (message.content.includes("comrade")) {heraldTheComrade(message); return;}
   if (!message.content.startsWith(prefix)) return;
   var args = message.content.slice(prefix.length).trim().split(/ +/g);
   var command = args.shift().toLowerCase();
@@ -60,13 +59,6 @@ function troll(message){
             setTimeout(function(){message.channel.send(`<@${userPerson.id}>`);}, interval);
           }
         }
-}
-
-function heraldTheComrade(message)
-{
-    var user = message.author;
-    message.channel.send(`<@${user.id}>, you called upon your Comrade friends! I am here to support you!`);
-    message.channel.send(`https://c.tenor.com/rH_kpMNuotUAAAAM/communism-communist.gif`);
 }
 
 function foo(message){
