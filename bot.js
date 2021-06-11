@@ -36,7 +36,6 @@ function troll(message){
     args.shift();
     args.shift();
     var repeat = Number(args.shift());
-    var interval = args.shift();
           if(!Number.isInteger(repeat)) return;
           repeat = Math.abs(repeat);
           if (repeat > 50) 
@@ -46,9 +45,14 @@ function troll(message){
           }
           if(!Number.isInteger(interval)){
             message.channel.send(`You want to ping <@${userPerson.id}> ${repeat} times`);
+var message = `<@{userPerson.id}> `;
+for (int i = 0; i < args.length; i++)
+{
+message += args[i] + " ";
+}
             for (var i = 0; i<repeat; i++)
             {
-                message.channel.send(`<@${userPerson.id}> ${interval}`);
+                message.channel.send(message);
             }
         }
 }
