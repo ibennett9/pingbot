@@ -45,14 +45,14 @@ function troll(message){
           }
           if(!Number.isInteger(interval)){
             message.channel.send(`You want to ping <@${userPerson.id}> ${repeat} times`);
-var message = `<@{userPerson.id}> `;
-for (int i = 0; i < args.length; i++)
-{
-message += args[i] + " ";
-}
+            var sendMessage = `<@{userPerson.id}> `;
+            for (int i = 0; i < args.length; i++)
+            {
+                 sendMessage += args[i] + " ";
+            }
             for (var i = 0; i<repeat; i++)
             {
-                message.channel.send(message);
+                message.channel.send(sendMessage);
             }
         }
 }
