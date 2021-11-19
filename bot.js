@@ -6,7 +6,6 @@ client.on('ready', () => {
 const prefix = "!";
 client.on("message", (message) => {
   // Exit and stop if it's not there
-  if (message.content.includes("comrade")) {heraldTheComrade(message); return;}
   if (!message.content.startsWith(prefix)) return;
   var args = message.content.slice(prefix.length).trim().split(/ +/g);
   var command = args.shift().toLowerCase();
@@ -20,10 +19,13 @@ client.on("message", (message) => {
 case "pog":
           message.reply('You are the goat :star_struck: :star_struck:');
           break;
+
   }
   
 });
+
 client.login(process.env.BOT_TOKEN);
+
 function troll(message){
   
     var args = message.content.slice(prefix.length).trim().split(/ +/g);
@@ -36,6 +38,7 @@ function troll(message){
     args.shift();
     args.shift();
     var repeat = Number(args.shift());
+    var interval = Number(args.shift());
           if(!Number.isInteger(repeat)) return;
           repeat = Math.abs(repeat);
           if (repeat > 50) 
@@ -45,22 +48,17 @@ function troll(message){
           }
           if(!Number.isInteger(interval)){
             message.channel.send(`You want to ping <@${userPerson.id}> ${repeat} times`);
-var message = `<@{userPerson.id}> `;
-for (int i = 0; i < args.length; i++)
-{
-message += args[i] + " ";
-}
             for (var i = 0; i<repeat; i++)
             {
-                message.channel.send(message);
+                message.channel.send(`<@${userPerson.id}>`);
             }
+        } else {
+          interval = Math.abs(interval);
+          for(var i =0;i<repeat;i++)
+          {
+            setTimeout(function(){message.channel.send(`<@${userPerson.id}>`);}, interval);
+          }
         }
-}
-function heraldTheComrade(message)
-{
-    var user = message.author;
-    message.channel.send(`<@${user.id}>, you called upon your Comrade friends! I am here to support you!`);
-    message.channel.send(`https://c.tenor.com/rH_kpMNuotUAAAAM/communism-communist.gif`);
 }
 
 function foo(message){
