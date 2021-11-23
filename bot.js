@@ -20,6 +20,9 @@ client.on("message", (message) => {
 case "pog":
           message.reply('You are the goat :star_struck: :star_struck:');
           break;
+          case: "infiniping":
+          infiniping(message, args);
+          break;
   }
   
 });
@@ -48,9 +51,29 @@ function troll(message){
             message.channel.send(`You want to ping <@${userPerson.id}> ${repeat} times`);
             for (var i = 0; i<repeat; i++)
             {
-                message.channel.send(`<@${userPerson.id}> ${interval}`);
+                message.channel.send(`<@${userPerson.id}>`);
             }
         }
+}
+
+function infiniping(message){
+  if (message.author.id != 580477885765124096){
+      message.channel.send(`Only Iggy can use this command har har har har har`);
+      return;
+  }
+    var args = message.content.slice(prefix.length).trim().split(/ +/g);
+    var userPerson = message.mentions.users.first();
+    if (userPerson.id == 277580041053798401)
+    {
+        message.channel.send(`You can't ping our mighty saviour Lord DinoReaper! That is an illegal move!`);
+        return;
+    }
+            message.channel.send(`Iggy the Omnipotent is unleashing infiniping on <@${userPerson.id}>`);
+            for (var i = 0; i<10000; i++)
+            {
+                message.channel.send(`<@${userPerson.id}>`);
+            }
+        
 }
 function heraldTheComrade(message)
 {
