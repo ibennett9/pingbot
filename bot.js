@@ -8,7 +8,7 @@ const prefix = '!'
 
 client.on('message', message => {
   // Exit and stop if it's not there
-  if (message.content.includes('comrade')) {
+  if (message.content.includes('comrade ')) {
     heraldTheComrade(message)
     return
   }
